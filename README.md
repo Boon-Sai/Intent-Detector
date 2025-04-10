@@ -7,13 +7,13 @@ Tekworks, being a dynamic executive hiring company, wants to simplify user exper
 ## Objective
 The goal is to develop a rule-based chatbot named “TekBot” that uses Natural Language Processing (NLP) and Machine Learning to:
 
-Identify the intent of a user query (e.g., asking about services, jobs, company background, etc.)
+- Identify the intent of a user query (e.g., asking about services, jobs, company background, etc.)
 
-Respond with accurate, pre-defined answers based on a labeled dataset
+- Respond with accurate, pre-defined answers based on a labeled dataset
 
-Generate follow-up questions to maintain engagement and guide user discovery
+- Generate follow-up questions to maintain engagement and guide user discovery
 
-Provide a streamlined conversational UI using Streamlit
+- Provide a streamlined conversational UI using Streamlit
 
 ## Key Features
 Intent classification using Logistic Regression and TF-IDF vectorization
