@@ -18,25 +18,25 @@ The goal is to develop a rule-based chatbot named “TekBot” that uses Natural
 ## Key Features
 Intent classification using Logistic Regression and TF-IDF vectorization
 
-NLP-based preprocessing with spaCy
+- NLP-based preprocessing with spaCy
 
-Predefined responses mapped to classified intents
+- Predefined responses mapped to classified intents
 
-Follow-up question generation using noun phrase extraction
+- Follow-up question generation using noun phrase extraction
 
-Web-based chatbot interface using Streamlit
+- Web-based chatbot interface using Streamlit
 
 ## Constraints
-No usage of LLMs or external APIs (e.g., OpenAI, Gemini, etc.)
+- No usage of LLMs or external APIs (e.g., OpenAI, Gemini, etc.)
 
-Must function offline with a local model and dataset
+- Must function offline with a local model and dataset
 
-Initial version is rule-based and uses a static dataset of intents and responses
+- Initial version is rule-based and uses a static dataset of intents and responses
 
 ## Future Scope
-Upgrade to LLM-powered chatbot for dynamic answer generation
+- Upgrade to LLM-powered chatbot for dynamic answer generation
 
-Add memory for long conversation context
+- Add memory for long conversation context
 
-Integrate backend APIs to fetch live job listings, project portfolios, etc.
+- Integrate backend APIs to fetch live job listings, project portfolios, etc.
 
