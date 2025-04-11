@@ -11,8 +11,6 @@ The goal is to develop a rule-based chatbot named “TekBot” that uses Natural
 
 - Respond with accurate, pre-defined answers based on a labeled dataset
 
-- Generate follow-up questions to maintain engagement and guide user discovery
-
 - Provide a streamlined conversational UI using Streamlit
 
 ## Key Features
