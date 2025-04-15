@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import spacy
 import joblib
+import os
 
 # Load model and data
 model = joblib.load("Models/tekbot_model.pkl")
