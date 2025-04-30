@@ -1,1 +1,36 @@
+# Ignore Python virtual environments
 venv/
+.env/
+.venv/
+
+# Ignore model files (commonly .pkl, .h5, .pt, .pth, etc.)
+*.pkl
+*.h5
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Ignore general model folders
+models/
+saved_models/
+checkpoints/
+
+# Ignore Python cache and bytecode files
+__pycache__/
+*.py[cod]
+*.so
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore environment and dependency files
+pip-log.txt
+poetry.lock
+
+# Ignore logs
+*.log
+
+# Ignore system files
+.DS_Store
+Thumbs.db
