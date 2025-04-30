@@ -1,4 +1,4 @@
-#!/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/bin/python
+#!/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

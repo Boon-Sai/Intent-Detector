@@ -1,6 +1,6 @@
 
 liblzma example programs
- =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = 
+========================
 
 Introduction
 

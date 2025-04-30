@@ -1,12 +1,12 @@
-prefix=/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv
-exec_prefix=${prefix}
-libdir=${exec_prefix}/lib
-sharedlibdir=${libdir}
-includedir=${prefix}/include
+prefix=/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv
+exec_prefix=/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv
+libdir=/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib
+sharedlibdir=/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib
+includedir=/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include
 
 Name: zlib
 Description: zlib compression library
-Version: 1.3.1
+Version: 1.2.13
 
 Requires:
 Libs: -L${libdir} -L${sharedlibdir} -lz

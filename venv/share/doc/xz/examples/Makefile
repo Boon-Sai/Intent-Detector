@@ -1,11 +1,11 @@
 # SPDX-License-Identifier: 0BSD
 # Author: Lasse Collin
 
-CC  =  c99
-CFLAGS  =  -g
-LDFLAGS  =  -llzma
+CC = c99
+CFLAGS = -g
+LDFLAGS = -llzma
 
-PROGS  =  \
+PROGS = \
 	01_compress_easy \
 	02_decompress \
 	03_compress_custom \

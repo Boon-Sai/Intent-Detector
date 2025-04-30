@@ -1,8 +1,8 @@
-prefix=/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv
+prefix=/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 toolexeclibdir=${libdir}
-includedir=/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include
+includedir=/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include
 
 Name: libffi
 Description: Library supporting Foreign Function Interfaces

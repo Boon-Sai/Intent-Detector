@@ -1,4 +1,4 @@
-#!/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/bin/python3.10
+#!/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/bin/python3.10
 # -*- python -*-
 
 # Keep this script in sync with python-config.sh.in

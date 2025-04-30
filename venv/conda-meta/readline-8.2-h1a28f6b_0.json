@@ -160,7 +160,7 @@
         "path_type": "hardlink",
         "prefix_placeholder": "/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_37p5hcjlng/croot/readline_1666648022400/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_place",
         "sha256": "f16a55a7917f79312fd55749e52537768004308b7c68070e3a1244931edb44b3",
-        "sha256_in_prefix": "21221cdae342aef74decd0d8e963654f9b5076109c697cf516119f75c2a9bbd0",
+        "sha256_in_prefix": "9a405dd0cb146fd242be102b887fa6881d7d67b0c1d0a4289363f1bd08f3d9ac",
         "size_in_bytes": 548
       },
       {
@@ -169,7 +169,7 @@
         "path_type": "hardlink",
         "prefix_placeholder": "/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_37p5hcjlng/croot/readline_1666648022400/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_place",
         "sha256": "f671e78857f21c5f4e040c5e8e6159129a8d2b8f6ef80fe233a42608fbb721c2",
-        "sha256_in_prefix": "4fdb88aa88db9582150b3546cf0456665c740893bda2c232331d22280c9665d3",
+        "sha256_in_prefix": "c20632611b1be79ccb1292b37edef16b65300dfe5f7edc3e1999bea685ebe821",
         "size_in_bytes": 564
       },
       {
@@ -178,6 +178,20 @@
         "sha256": "f526ca246cec4c4fa535a792c04735fb7b06d318d9b4f61f6a0f64152fa39a43",
         "sha256_in_prefix": "f526ca246cec4c4fa535a792c04735fb7b06d318d9b4f61f6a0f64152fa39a43",
         "size_in_bytes": 81365
+      },
+      {
+        "_path": "share/doc/readline/INSTALL",
+        "path_type": "hardlink",
+        "sha256": "b7bbbc2908a61f0594277fb03b1a11c18f9ffbd8737a804f9a886454d0894967",
+        "sha256_in_prefix": "b7bbbc2908a61f0594277fb03b1a11c18f9ffbd8737a804f9a886454d0894967",
+        "size_in_bytes": 13357
+      },
+      {
+        "_path": "share/doc/readline/README",
+        "path_type": "hardlink",
+        "sha256": "680abe0d4e5866d49304863c1b5ef6f96055942da178f061a41a0dce9e3d89a9",
+        "sha256_in_prefix": "680abe0d4e5866d49304863c1b5ef6f96055942da178f061a41a0dce9e3d89a9",
+        "size_in_bytes": 8029
       },
       {
         "_path": "share/info/history.info",

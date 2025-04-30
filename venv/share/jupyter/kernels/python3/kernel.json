@@ -1,6 +1,6 @@
 {
  "argv": [
-  "/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/bin/python",
+  "python",
   "-m",
   "ipykernel_launcher",
   "-f",

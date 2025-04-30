@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: 0BSD
 # Author: Lasse Collin
 
-prefix=/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv
+prefix=/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include

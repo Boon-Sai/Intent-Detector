@@ -12,132 +12,138 @@ build_time_vars = {'ABIFLAGS': '',
  'BASECFLAGS': '-Wno-unused-result -Wsign-compare -Wunreachable-code',
  'BASECPPFLAGS': '-IObjects -IInclude -IPython',
  'BASEMODLIBS': '',
- 'BINDIR': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/bin',
- 'BINLIBDEST': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib/python3.10',
+ 'BINDIR': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/bin',
+ 'BINLIBDEST': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib/python3.10',
  'BLDLIBRARY': 'libpython3.10.a',
  'BLDSHARED': 'arm64-apple-darwin20.0.0-clang -bundle -undefined '
               'dynamic_lookup '
               ''
-              '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
-              '-Wl,-rpath,/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
-              '-L/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
+              '-Wl,-pie -Wl,-headerpad_max_install_names '
+              '-Wl,-dead_strip_dylibs '
+              '-Wl,-rpath,/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
+              '-L/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
               ''
               ''
-              '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
-              '-Wl,-rpath,/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
-              '-L/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib',
+              '-Wl,-pie -Wl,-headerpad_max_install_names '
+              '-Wl,-dead_strip_dylibs '
+              '-Wl,-rpath,/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
+              '-L/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib',
  'BUILDEXE': '.exe',
  'BUILDPYTHON': 'python.exe',
- 'BUILD_GNU_TYPE': 'x86_64-apple-darwin13.4.0',
+ 'BUILD_GNU_TYPE': 'arm64-apple-darwin20.0.0',
  'BYTESTR_DEPS': '\\',
  'CC': 'arm64-apple-darwin20.0.0-clang',
  'CCSHARED': '',
- 'CFLAGS': '-Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG '
+ 'CFLAGS': '-Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG -g '
            '-fwrapv -O2 -Wall '
            ''
-           '-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem '
-           '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
+           '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe '
+           '-isystem '
+           '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
            ' '
            ' '
            '-arch arm64  '
            ''
-           '-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe -isystem '
-           '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
+           '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe '
+           '-isystem '
+           '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
            ' '
            ' '
            '-arch arm64 ',
  'CFLAGSFORSHARED': '',
  'CFLAGS_ALIASING': '-fno-strict-aliasing',
- 'CFLAGS_NODIST': '',
  'CONFIGFILES': 'configure configure.ac acconfig.h pyconfig.h.in '
                 'Makefile.pre.in',
  'CONFIGURE_CFLAGS': ''
                      ''
-                     '-ftree-vectorize -fPIC -fstack-protector-strong -O2 '
-                     '-pipe -isystem '
-                     '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
+                     '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong '
+                     '-O2 -pipe -isystem '
+                     '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
                      ' '
                      ' '
                      '-arch arm64 ',
  'CONFIGURE_CFLAGS_NODIST': ' -std=c99 -Wextra -Wno-unused-result '
                             '-Wno-unused-parameter '
                             '-Wno-missing-field-initializers '
+                            '-Wstrict-prototypes '
                             '-Werror=implicit-function-declaration '
                             '-fvisibility=hidden',
  'CONFIGURE_CPPFLAGS': ''
                        ''
                        '-D_FORTIFY_SOURCE=2 -isystem '
-                       '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
-                       '-mmacosx-version-min=11.0 -mmacosx-version-min=11.0 '
-                       '-I/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include',
+                       '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
+                       '-mmacosx-version-min=11.1 '
+                       '-I/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include',
  'CONFIGURE_LDFLAGS': ''
                       ''
-                      '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
-                      '-Wl,-rpath,/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
-                      '-L/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib',
+                      '-Wl,-pie -Wl,-headerpad_max_install_names '
+                      '-Wl,-dead_strip_dylibs '
+                      '-Wl,-rpath,/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
+                      '-L/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib',
  'CONFIGURE_LDFLAGS_NODIST': ' -Wl,-export_dynamic -g',
- 'CONFIG_ARGS': "'--prefix=/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv' "
-                "'--build=x86_64-apple-darwin13.4.0' "
+ 'CONFIG_ARGS': "'--prefix=/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv' "
+                "'--build=arm64-apple-darwin20.0.0' "
                 "'--host=arm64-apple-darwin20.0.0' '--enable-ipv6' "
                 "'--with-ensurepip=no' "
-                "'--with-tzpath=/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/share/zoneinfo:/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/share/tzinfo' "
+                "'--with-tzpath=/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/share/zoneinfo:/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/share/tzinfo' "
                 "'--with-computed-gotos' '--with-system-ffi' "
-                "'--with-system-expat' '--enable-loadable-sqlite-extensions' "
-                "'--with-tcltk-includes=-I/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include' "
-                "'--with-tcltk-libs=-L/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib "
+                "'--enable-loadable-sqlite-extensions' "
+                "'--with-tcltk-includes=-I/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include' "
+                "'--with-tcltk-libs=-L/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib "
                 "-ltcl8.6 -ltk8.6' '--with-platlibdir=lib' '--with-lto' "
-                "'-oldincludedir=/Users/runner/miniforge3/conda-bld/python-split_1744144830764/_build_env/arm64-apple-darwin20.0.0/sysroot/usr/include' "
-                "'--disable-shared' 'build_alias=x86_64-apple-darwin13.4.0' "
+                "'--enable-optimizations' "
+                "'-oldincludedir=/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/_build_env/arm64-apple-darwin20.0.0/sysroot/usr/include' "
+                "'--disable-shared' 'PROFILE_TASK=-m test --pgo' "
+                "'build_alias=arm64-apple-darwin20.0.0' "
                 "'host_alias=arm64-apple-darwin20.0.0' 'MACHDEP=darwin' "
                 "'CC=arm64-apple-darwin20.0.0-clang' 'CFLAGS="
                 ''
-                '-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe '
-                '-isystem '
-                '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
+                '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 '
+                '-pipe -isystem '
+                '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
                 ' '
                 ' '
                 "-arch arm64 ' 'LDFLAGS="
                 ''
-                '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
-                '-Wl,-rpath,/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
-                "-L/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib' "
+                '-Wl,-pie -Wl,-headerpad_max_install_names '
+                '-Wl,-dead_strip_dylibs '
+                '-Wl,-rpath,/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
+                "-L/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib' "
                 "'CPPFLAGS="
                 ''
                 '-D_FORTIFY_SOURCE=2 -isystem '
-                '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
-                '-mmacosx-version-min=11.0 -mmacosx-version-min=11.0 '
-                "-I/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include' "
-                "'CPP=arm64-apple-darwin20.0.0-clang-cpp' "
-                "'PKG_CONFIG_PATH=/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib/pkgconfig'",
- 'CONFINCLUDEDIR': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include',
- 'CONFINCLUDEPY': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include/python3.10',
+                '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
+                '-mmacosx-version-min=11.1 '
+                "-I/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include'",
+ 'CONFINCLUDEDIR': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include',
+ 'CONFINCLUDEPY': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include/python3.10',
  'COREPYTHONPATH': '',
- 'COVERAGE_INFO': '/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/build-static/coverage.info',
- 'COVERAGE_REPORT': '/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/build-static/lcov-report',
+ 'COVERAGE_INFO': '/private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/build-static/coverage.info',
+ 'COVERAGE_REPORT': '/private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/build-static/lcov-report',
  'COVERAGE_REPORT_OPTIONS': '--no-branch-coverage --title "CPython lcov '
                             'report"',
  'CPPFLAGS': '-IObjects -IInclude -IPython -I. '
-             '-I/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/Include '
+             '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Include '
              ''
              ''
              '-D_FORTIFY_SOURCE=2 -isystem '
-             '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
-             '-mmacosx-version-min=11.0 -mmacosx-version-min=11.0 '
-             '-I/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
+             '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
+             '-mmacosx-version-min=11.1 '
+             '-I/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
              ''
              ''
              '-D_FORTIFY_SOURCE=2 -isystem '
-             '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
-             '-mmacosx-version-min=11.0 -mmacosx-version-min=11.0 '
-             '-I/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include',
+             '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
+             '-mmacosx-version-min=11.1 '
+             '-I/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include',
  'CXX': 'arm64-apple-darwin20.0.0-clang++',
- 'DESTDIRS': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv '
-             '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
-             '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib/python3.10 '
-             '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib/python3.10/lib-dynload',
- 'DESTLIB': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib/python3.10',
+ 'DESTDIRS': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv '
+             '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
+             '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib/python3.10 '
+             '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib/python3.10/lib-dynload',
+ 'DESTLIB': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib/python3.10',
  'DESTPATH': '',
- 'DESTSHARED': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib/python3.10/lib-dynload',
+ 'DESTSHARED': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib/python3.10/lib-dynload',
  'DFLAGS': '',
  'DIRMODE': 755,
  'DIST': 'README.rst ChangeLog configure configure.ac acconfig.h pyconfig.h.in '
@@ -356,10 +362,8 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_LIBRESOLV': 0,
  'HAVE_LIBSENDFILE': 0,
  'HAVE_LIBUTIL_H': 0,
- 'HAVE_LIBUUID': 0,
  'HAVE_LINK': 1,
  'HAVE_LINKAT': 1,
- 'HAVE_LINUX_AUXVEC_H': 0,
  'HAVE_LINUX_CAN_BCM_H': 0,
  'HAVE_LINUX_CAN_H': 0,
  'HAVE_LINUX_CAN_J1939_H': 0,
@@ -449,7 +453,6 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_SCHED_SETAFFINITY': 0,
  'HAVE_SCHED_SETPARAM': 0,
  'HAVE_SCHED_SETSCHEDULER': 0,
- 'HAVE_SEM_CLOCKWAIT': 0,
  'HAVE_SEM_GETVALUE': 1,
  'HAVE_SEM_OPEN': 1,
  'HAVE_SEM_TIMEDWAIT': 0,
@@ -522,7 +525,6 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_SYSCONF': 1,
  'HAVE_SYSEXITS_H': 1,
  'HAVE_SYS_AUDIOIO_H': 0,
- 'HAVE_SYS_AUXV_H': 0,
  'HAVE_SYS_BSDTTY_H': 0,
  'HAVE_SYS_DEVPOLL_H': 0,
  'HAVE_SYS_DIR_H': 0,
@@ -603,13 +605,13 @@ build_time_vars = {'ABIFLAGS': '',
  'HAVE_WRITEV': 1,
  'HAVE_ZLIB_COPY': 1,
  'HAVE__GETPTY': 0,
- 'HOST_GNU_TYPE': 'aarch64-apple-darwin20.0.0',
- 'INCLDIRSTOMAKE': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
-                   '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
-                   '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include/python3.10 '
-                   '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include/python3.10',
- 'INCLUDEDIR': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include',
- 'INCLUDEPY': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include/python3.10',
+ 'HOST_GNU_TYPE': 'arm64-apple-darwin20.0.0',
+ 'INCLDIRSTOMAKE': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
+                   '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
+                   '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include/python3.10 '
+                   '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include/python3.10',
+ 'INCLUDEDIR': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include',
+ 'INCLUDEPY': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include/python3.10',
  'INSTALL': '/usr/bin/install -c',
  'INSTALL_DATA': '/usr/bin/install -c -m 644',
  'INSTALL_PROGRAM': '/usr/bin/install -c',
@@ -621,39 +623,36 @@ build_time_vars = {'ABIFLAGS': '',
  'LDCXXSHARED': 'arm64-apple-darwin20.0.0-clang++ -bundle -undefined '
                 'dynamic_lookup',
  'LDFLAGS': ''
+            '-Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
+            '-Wl,-rpath,/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
+            '-L/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
             ''
-            '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
-            '-Wl,-rpath,/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
-            '-L/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
-            ''
-            ''
-            '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
-            '-Wl,-rpath,/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
-            '-L/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib',
- 'LDFLAGS_NODIST': '',
+            '-Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
+            '-Wl,-rpath,/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
+            '-L/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib',
  'LDLIBRARY': 'libpython3.10.a',
  'LDLIBRARYDIR': '',
  'LDSHARED': 'arm64-apple-darwin20.0.0-clang -bundle -undefined dynamic_lookup '
              ''
-             ''
+             '-Wl,-pie '
              '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
-             '-Wl,-rpath,/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
-             '-L/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
+             '-Wl,-rpath,/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
+             '-L/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
              ''
-             ''
+             '-Wl,-pie '
              '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
-             '-Wl,-rpath,/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
-             '-L/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib',
+             '-Wl,-rpath,/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
+             '-L/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib',
  'LDVERSION': '3.10',
  'LIBC': '',
- 'LIBDEST': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib/python3.10',
- 'LIBDIR': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib',
- 'LIBFFI_INCLUDEDIR': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include',
+ 'LIBDEST': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib/python3.10',
+ 'LIBDIR': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib',
+ 'LIBFFI_INCLUDEDIR': '',
  'LIBM': '',
  'LIBOBJDIR': 'Python/',
  'LIBOBJS': '',
- 'LIBPC': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib/pkgconfig',
- 'LIBPL': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib/python3.10/config-3.10-darwin',
+ 'LIBPC': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib/pkgconfig',
+ 'LIBPL': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib/python3.10/config-3.10-darwin',
  'LIBPYTHON': '',
  'LIBRARY': 'libpython3.10.a',
  'LIBRARY_DEPS': 'libpython3.10.a',
@@ -667,20 +666,20 @@ build_time_vars = {'ABIFLAGS': '',
  'LIPO_INTEL64_FLAGS': '',
  'LLVM_PROF_ERR': 'no',
  'LLVM_PROF_FILE': 'LLVM_PROFILE_FILE="code-%p.profclangr"',
- 'LLVM_PROF_MERGER': '/Users/runner/miniforge3/conda-bld/python-split_1744144830764/_build_env/bin/llvm-profdata '
+ 'LLVM_PROF_MERGER': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/_build_env/bin/llvm-profdata '
                      'merge -output=code.profclangd *.profclangr',
  'LN': 'ln',
  'LOCALMODLIBS': '',
  'MACHDEP': 'darwin',
  'MACHDEP_OBJS': '',
- 'MACHDESTLIB': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib/python3.10',
- 'MACOSX_DEPLOYMENT_TARGET': '11.0',
+ 'MACHDESTLIB': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib/python3.10',
+ 'MACOSX_DEPLOYMENT_TARGET': '11.1',
  'MAINCC': 'arm64-apple-darwin20.0.0-clang',
  'MAJOR_IN_MKDEV': 0,
  'MAJOR_IN_SYSMACROS': 0,
- 'MAKESETUP': '/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/Modules/makesetup',
- 'MANDIR': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/share/man',
- 'MKDIR_P': '/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/install-sh '
+ 'MAKESETUP': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Modules/makesetup',
+ 'MANDIR': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/share/man',
+ 'MKDIR_P': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/install-sh '
             '-c -d',
  'MODBUILT_NAMES': 'posix  errno  pwd  _sre  _codecs  _weakref  _functools  '
                    '_operator  _collections  _abc  itertools  atexit  _signal  '
@@ -706,11 +705,11 @@ build_time_vars = {'ABIFLAGS': '',
  'MVWDELCH_IS_EXPRESSION': 1,
  'NO_AS_NEEDED': '',
  'OBJECT_OBJS': '\\',
- 'OPENSSL_INCLUDES': '-I/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include',
- 'OPENSSL_LDFLAGS': '-L/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib',
+ 'OPENSSL_INCLUDES': '-I/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include',
+ 'OPENSSL_LDFLAGS': '-L/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib',
  'OPENSSL_LIBS': '-lssl -lcrypto',
  'OPENSSL_RPATH': '',
- 'OPT': '-DNDEBUG -fwrapv -O2 -Wall',
+ 'OPT': '-DNDEBUG -g -fwrapv -O2 -Wall',
  'OTHER_LIBTOOL_OPT': '',
  'PACKAGE_BUGREPORT': 0,
  'PACKAGE_NAME': 0,
@@ -727,7 +726,7 @@ build_time_vars = {'ABIFLAGS': '',
  'PLATLIBDIR': 'lib',
  'POBJS': '\\',
  'POSIX_SEMAPHORES_NOT_ENABLED': 0,
- 'PROFILE_TASK': '-m test --pgo --timeout=1200',
+ 'PROFILE_TASK': '-m test --pgo',
  'PTHREAD_KEY_T_IS_COMPATIBLE_WITH_INT': 0,
  'PTHREAD_SYSTEM_SCHED_SUPPORTED': 1,
  'PURIFY': '',
@@ -739,188 +738,190 @@ build_time_vars = {'ABIFLAGS': '',
  'PYTHONFRAMEWORKINSTALLDIR': '',
  'PYTHONFRAMEWORKPREFIX': '',
  'PYTHONPATH': '',
- 'PYTHON_FOR_BUILD': 'python3.10',
+ 'PYTHON_FOR_BUILD': './python.exe -E',
  'PYTHON_FOR_REGEN': '',
  'PYTHON_HEADERS': '\\',
  'PYTHON_OBJS': '\\',
- 'PY_BUILD_ENVIRON': '_PYTHON_PROJECT_BASE=/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/build-static '
-                     '_PYTHON_HOST_PLATFORM=$(_PYTHON_HOST_PLATFORM) '
-                     'PYTHONPATH=$(shell test -f pybuilddir.txt && echo '
-                     '/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/build-static/`cat '
-                     'pybuilddir.txt`:)/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/Lib '
-                     '_PYTHON_SYSCONFIGDATA_NAME=_sysconfigdata__darwin_darwin',
+ 'PY_BUILD_ENVIRON': '',
  'PY_BUILTIN_HASHLIB_HASHES': '"md5,sha1,sha256,sha512,sha3,blake2"',
  'PY_BUILTIN_MODULE_CFLAGS': '-Wno-unused-result -Wsign-compare '
-                             '-Wunreachable-code -DNDEBUG -fwrapv -O2 -Wall '
+                             '-Wunreachable-code -DNDEBUG -g -fwrapv -O2 -Wall '
                              ''
                              ''
-                             '-ftree-vectorize -fPIC -fstack-protector-strong '
-                             '-O2 -pipe -isystem '
-                             '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
+                             '-ftree-vectorize -fPIC -fPIE '
+                             '-fstack-protector-strong -O2 -pipe -isystem '
+                             '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
                              ' '
                              ' '
                              '-arch arm64  '
                              ''
-                             '-ftree-vectorize -fPIC -fstack-protector-strong '
-                             '-O2 -pipe -isystem '
-                             '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
+                             '-ftree-vectorize -fPIC -fPIE '
+                             '-fstack-protector-strong -O2 -pipe -isystem '
+                             '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
                              ' '
                              ' '
                              '-arch arm64   -std=c99 -Wextra '
                              '-Wno-unused-result -Wno-unused-parameter '
                              '-Wno-missing-field-initializers '
+                             '-Wstrict-prototypes '
                              '-Werror=implicit-function-declaration '
-                             '-fvisibility=hidden  '
-                             '-I/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/Include/internal '
+                             '-fvisibility=hidden '
+                             '-fprofile-instr-use=code.profclangd '
+                             '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Include/internal '
                              '-IObjects -IInclude -IPython -I. '
-                             '-I/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/Include '
+                             '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Include '
                              ''
                              ''
                              '-D_FORTIFY_SOURCE=2 -isystem '
-                             '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
-                             '-mmacosx-version-min=11.0 '
-                             '-mmacosx-version-min=11.0 '
-                             '-I/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
+                             '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
+                             '-mmacosx-version-min=11.1 '
+                             '-I/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
                              ''
                              ''
                              '-D_FORTIFY_SOURCE=2 -isystem '
-                             '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
-                             '-mmacosx-version-min=11.0 '
-                             '-mmacosx-version-min=11.0 '
-                             '-I/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
+                             '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
+                             '-mmacosx-version-min=11.1 '
+                             '-I/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
                              '-DPy_BUILD_CORE_BUILTIN',
  'PY_CFLAGS': '-Wno-unused-result -Wsign-compare -Wunreachable-code -DNDEBUG '
-              '-fwrapv -O2 -Wall '
+              '-g -fwrapv -O2 -Wall '
               ''
-              '-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe '
+              '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe '
               '-isystem '
-              '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
+              '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
               ' '
               ' '
               '-arch arm64  '
               ''
-              '-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe '
+              '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 -pipe '
               '-isystem '
-              '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
+              '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
               ' '
               ' '
               '-arch arm64 ',
  'PY_CFLAGS_NODIST': ' -std=c99 -Wextra -Wno-unused-result '
                      '-Wno-unused-parameter -Wno-missing-field-initializers '
+                     '-Wstrict-prototypes '
                      '-Werror=implicit-function-declaration '
-                     '-fvisibility=hidden  '
-                     '-I/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/Include/internal',
+                     '-fvisibility=hidden -fprofile-instr-use=code.profclangd '
+                     '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Include/internal',
  'PY_COERCE_C_LOCALE': 1,
  'PY_CORE_CFLAGS': '-Wno-unused-result -Wsign-compare -Wunreachable-code '
-                   '-DNDEBUG -fwrapv -O2 -Wall '
+                   '-DNDEBUG -g -fwrapv -O2 -Wall '
                    ''
-                   '-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe '
-                   '-isystem '
-                   '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
+                   '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 '
+                   '-pipe -isystem '
+                   '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
                    ' '
                    ' '
                    '-arch arm64  '
                    ''
-                   '-ftree-vectorize -fPIC -fstack-protector-strong -O2 -pipe '
-                   '-isystem '
-                   '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
+                   '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong -O2 '
+                   '-pipe -isystem '
+                   '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
                    ' '
                    ' '
                    '-arch arm64   -std=c99 -Wextra '
                    '-Wno-unused-result -Wno-unused-parameter '
-                   '-Wno-missing-field-initializers '
-                   '-Werror=implicit-function-declaration -fvisibility=hidden  '
-                   '-I/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/Include/internal '
+                   '-Wno-missing-field-initializers -Wstrict-prototypes '
+                   '-Werror=implicit-function-declaration -fvisibility=hidden '
+                   '-fprofile-instr-use=code.profclangd '
+                   '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Include/internal '
                    '-IObjects -IInclude -IPython -I. '
-                   '-I/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/Include '
+                   '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Include '
                    ''
                    ''
                    '-D_FORTIFY_SOURCE=2 -isystem '
-                   '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
-                   '-mmacosx-version-min=11.0 -mmacosx-version-min=11.0 '
-                   '-I/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
+                   '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
+                   '-mmacosx-version-min=11.1 '
+                   '-I/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
                    ''
                    ''
                    '-D_FORTIFY_SOURCE=2 -isystem '
-                   '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
-                   '-mmacosx-version-min=11.0 -mmacosx-version-min=11.0 '
-                   '-I/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
+                   '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
+                   '-mmacosx-version-min=11.1 '
+                   '-I/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
                    '-DPy_BUILD_CORE',
  'PY_CORE_LDFLAGS': ''
                     ''
-                    '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
-                    '-Wl,-rpath,/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
-                    '-L/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
+                    '-Wl,-pie -Wl,-headerpad_max_install_names '
+                    '-Wl,-dead_strip_dylibs '
+                    '-Wl,-rpath,/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
+                    '-L/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
                     ''
                     ''
-                    '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
-                    '-Wl,-rpath,/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
-                    '-L/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
+                    '-Wl,-pie -Wl,-headerpad_max_install_names '
+                    '-Wl,-dead_strip_dylibs '
+                    '-Wl,-rpath,/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
+                    '-L/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
                     ' -Wl,-export_dynamic -g',
  'PY_CPPFLAGS': '-IObjects -IInclude -IPython -I. '
-                '-I/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/Include '
+                '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Include '
                 ''
                 ''
                 '-D_FORTIFY_SOURCE=2 -isystem '
-                '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
-                '-mmacosx-version-min=11.0 -mmacosx-version-min=11.0 '
-                '-I/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
+                '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
+                '-mmacosx-version-min=11.1 '
+                '-I/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
                 ''
                 ''
                 '-D_FORTIFY_SOURCE=2 -isystem '
-                '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
-                '-mmacosx-version-min=11.0 -mmacosx-version-min=11.0 '
-                '-I/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include',
+                '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
+                '-mmacosx-version-min=11.1 '
+                '-I/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include',
  'PY_ENABLE_SHARED': 0,
  'PY_FORMAT_SIZE_T': '"z"',
  'PY_LDFLAGS': ''
                ''
-               '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
-               '-Wl,-rpath,/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
-               '-L/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
+               '-Wl,-pie -Wl,-headerpad_max_install_names '
+               '-Wl,-dead_strip_dylibs '
+               '-Wl,-rpath,/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
+               '-L/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
                ''
                ''
-               '-Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs '
-               '-Wl,-rpath,/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
-               '-L/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib',
+               '-Wl,-pie -Wl,-headerpad_max_install_names '
+               '-Wl,-dead_strip_dylibs '
+               '-Wl,-rpath,/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
+               '-L/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib',
  'PY_LDFLAGS_NODIST': ' -Wl,-export_dynamic -g',
  'PY_SSL_DEFAULT_CIPHERS': 1,
  'PY_SSL_DEFAULT_CIPHER_STRING': 0,
  'PY_STDMODULE_CFLAGS': '-Wno-unused-result -Wsign-compare -Wunreachable-code '
-                        '-DNDEBUG -fwrapv -O2 -Wall '
+                        '-DNDEBUG -g -fwrapv -O2 -Wall '
                         ''
-                        '-ftree-vectorize -fPIC -fstack-protector-strong -O2 '
-                        '-pipe -isystem '
-                        '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
+                        '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong '
+                        '-O2 -pipe -isystem '
+                        '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
                         ' '
                         ' '
                         '-arch arm64  '
                         ''
-                        '-ftree-vectorize -fPIC -fstack-protector-strong -O2 '
-                        '-pipe -isystem '
-                        '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
+                        '-ftree-vectorize -fPIC -fPIE -fstack-protector-strong '
+                        '-O2 -pipe -isystem '
+                        '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
                         ' '
                         ' '
                         '-arch arm64   -std=c99 -Wextra '
                         '-Wno-unused-result -Wno-unused-parameter '
-                        '-Wno-missing-field-initializers '
+                        '-Wno-missing-field-initializers -Wstrict-prototypes '
                         '-Werror=implicit-function-declaration '
-                        '-fvisibility=hidden  '
-                        '-I/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/Include/internal '
+                        '-fvisibility=hidden '
+                        '-fprofile-instr-use=code.profclangd '
+                        '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Include/internal '
                         '-IObjects -IInclude -IPython -I. '
-                        '-I/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/Include '
+                        '-I/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Include '
                         ''
                         ''
                         '-D_FORTIFY_SOURCE=2 -isystem '
-                        '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
-                        '-mmacosx-version-min=11.0 -mmacosx-version-min=11.0 '
-                        '-I/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
+                        '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
+                        '-mmacosx-version-min=11.1 '
+                        '-I/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
                         ''
                         ''
                         '-D_FORTIFY_SOURCE=2 -isystem '
-                        '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include '
-                        '-mmacosx-version-min=11.0 -mmacosx-version-min=11.0 '
-                        '-I/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include',
+                        '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include '
+                        '-mmacosx-version-min=11.1 '
+                        '-I/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include',
  'Py_DEBUG': 0,
  'Py_ENABLE_SHARED': 0,
  'Py_HASH_ALGORITHM': 0,
@@ -930,8 +931,9 @@ build_time_vars = {'ABIFLAGS': '',
  'RESSRCDIR': 'Mac/Resources/framework',
  'RETSIGTYPE': 'void',
  'RUNSHARED': '',
- 'SCRIPTDIR': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib',
+ 'SCRIPTDIR': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib',
  'SETPGRP_HAVE_ARG': 0,
+ 'SGI_ABI': '',
  'SHELL': '/bin/sh',
  'SHLIBS': '-ldl   -framework CoreFoundation',
  'SHLIB_SUFFIX': '.so',
@@ -958,7 +960,7 @@ build_time_vars = {'ABIFLAGS': '',
  'SIZEOF__BOOL': 1,
  'SOABI': 'cpython-310-darwin',
  'SRCDIRS': 'Parser Objects Python Modules Modules/_io Programs',
- 'SRC_GDB_HOOKS': '/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/Tools/gdb/libpython.py',
+ 'SRC_GDB_HOOKS': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Tools/gdb/libpython.py',
  'STATIC_LIBPYTHON': 1,
  'STDC_HEADERS': 1,
  'STRICT_SYSV_CURSES': "/* Don't use ncurses extensions */",
@@ -967,31 +969,30 @@ build_time_vars = {'ABIFLAGS': '',
  'SUBDIRSTOO': 'Include Lib Misc',
  'SYSLIBS': '',
  'SYS_SELECT_WITH_SYS_TIME': 1,
- 'TCLTK_INCLUDES': '-I/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/include',
- 'TCLTK_LIBS': '-L/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/lib '
+ 'TCLTK_INCLUDES': '-I/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/include',
+ 'TCLTK_LIBS': '-L/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/lib '
                '-ltcl8.6 -ltk8.6',
  'TESTOPTS': '',
  'TESTPATH': '',
  'TESTPYTHON': './python.exe',
  'TESTPYTHONOPTS': '',
  'TESTRUNNER': './python.exe '
-               '/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/Tools/scripts/run_tests.py',
+               '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Tools/scripts/run_tests.py',
  'TESTSUBDIRS': 'ctypes/test \\',
  'TESTTIMEOUT': 1200,
  'TEST_MODULES': 'yes',
- 'THREAD_STACK_SIZE': '0x1000000',
  'TIMEMODULE_LIB': 0,
  'TIME_WITH_SYS_TIME': 1,
  'TM_IN_SYS_TIME': 0,
- 'TZPATH': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/share/zoneinfo:/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/share/tzinfo',
+ 'TZPATH': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/share/zoneinfo:/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/share/tzinfo',
  'UNICODE_DEPS': '\\',
  'UNIVERSALSDK': '',
- 'UPDATE_FILE': '/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/Tools/scripts/update_file.py',
+ 'UPDATE_FILE': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/Tools/scripts/update_file.py',
  'USE_COMPUTED_GOTOS': 1,
  'VERSION': '3.10',
- 'VPATH': '/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work',
+ 'VPATH': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work',
  'WHEEL_PKG_DIR': '',
- 'WINDOW_HAS_FLAGS': 0,
+ 'WINDOW_HAS_FLAGS': 1,
  'WITH_DECIMAL_CONTEXTVAR': 1,
  'WITH_DOC_STRINGS': 1,
  'WITH_DTRACE': 0,
@@ -1003,9 +1004,9 @@ build_time_vars = {'ABIFLAGS': '',
  'WITH_VALGRIND': 0,
  'X87_DOUBLE_ROUNDING': 0,
  'XMLLIBSUBDIRS': 'xml xml/dom xml/etree xml/parsers xml/sax',
- 'abs_builddir': '/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work/build-static',
- 'abs_srcdir': '/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work',
- 'datarootdir': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/share',
- 'exec_prefix': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv',
- 'prefix': '/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv',
- 'srcdir': '/Users/runner/miniforge3/conda-bld/python-split_1744144830764/work'}
+ 'abs_builddir': '/private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work/build-static',
+ 'abs_srcdir': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work',
+ 'datarootdir': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/share',
+ 'exec_prefix': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv',
+ 'prefix': '/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv',
+ 'srcdir': '/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_croot-pb155nxl/python-split_1646301027770/work'}

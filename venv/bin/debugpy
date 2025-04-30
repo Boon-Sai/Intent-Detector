@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' /Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv/bin/python "$0" "$@"
-' '''
+#!/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

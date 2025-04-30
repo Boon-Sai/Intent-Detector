@@ -1,5 +1,5 @@
 Introduction
- =  =  =  =  =  =  =  =  =  =  =  = 
+============
 
 This is the Gnu Readline library, version 8.2.
 
@@ -25,12 +25,12 @@ configuration process is automated, so no further intervention should
 be necessary.  Readline builds with `gcc' by default if it is
 available.  If you want to use `cc' instead, type
 
-        CC = cc ./configure
+        CC=cc ./configure
 
 if you are using a Bourne-style shell.  If you are not, the following
 may work:
 
-        env CC = cc ./configure
+        env CC=cc ./configure
 
 Read the file INSTALL in this directory for more information about how
 to customize and control the build process.
@@ -42,7 +42,7 @@ The special make target `everything' will build the static and shared
 libraries (if the target platform supports them) and the examples.
 
 Examples
- =  =  =  =  =  =  =  = 
+========
 
 There are several example programs that use Readline features in the
 examples directory.  The `rl' program is of particular interest.  It
@@ -50,7 +50,7 @@ is a command-line interface to Readline, suitable for use in shell
 scripts in place of `read'.
 
 Shared Libraries
- =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = 
+================
 
 There is skeletal support for building shared versions of the
 Readline and History libraries.  The configure script creates
@@ -150,7 +150,7 @@ install' in the shlib subdirectory will also work.  If you don't want
 to install any created shared libraries, run `make install-static'. 
 
 Documentation
- =  =  =  =  =  =  =  =  =  =  =  =  = 
+=============
 
 The documentation for the Readline and History libraries appears in
 the `doc' subdirectory.  There are three texinfo files and a
@@ -160,7 +160,7 @@ programmer's manuals.  HTML versions of the manuals appear in the
 `doc' subdirectory as well. 
 
 Usage
- =  =  =  =  = 
+=====
 
 Our position on the use of Readline through a shared-library linking
 mechanism is that there is no legal difference between shared-library
@@ -169,7 +169,7 @@ modules into a single larger work.  The conditions for using Readline
 in a larger work are stated in section 3 of the GNU GPL.
 
 Reporting Bugs
- =  =  =  =  =  =  =  =  =  =  =  =  =  = 
+==============
 
 Bug reports for Readline should be sent to:
 

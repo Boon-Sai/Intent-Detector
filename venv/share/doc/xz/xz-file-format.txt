@@ -1,6 +1,6 @@
 
 The .xz File Format
- =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = 
+===================
 
 Version 1.2.1 (2024-04-08)
 
@@ -155,9 +155,9 @@ Version 1.2.1 (2024-04-08)
             |  Foo  |   Two bytes; that is, some of the vertical bars
             +---+---+   can be missing.
 
-            + =  =  =  =  =  =  = +
+            +=======+
             |  Foo  |   Zero or more bytes.
-            + =  =  =  =  =  =  = +
+            +=======+
 
         In this document, a boxed byte or a byte sequence declared
         using this notation is called "a field". The example field
@@ -166,19 +166,19 @@ Version 1.2.1 (2024-04-08)
         If there are many fields, they may be split to multiple lines.
         This is indicated with an arrow ("--->"):
 
-            + =  =  =  =  = +
+            +=====+
             | Foo |
-            + =  =  =  =  = +
+            +=====+
 
-                 + =  =  =  =  = +
+                 +=====+
             ---> | Bar |
-                 + =  =  =  =  = +
+                 +=====+
 
         The above is equivalent to this:
 
-            + =  =  =  =  = + =  =  =  =  = +
+            +=====+=====+
             | Foo | Bar |
-            + =  =  =  =  = + =  =  =  =  = +
+            +=====+=====+
 
 
 1.2. Multibyte Integers
@@ -214,14 +214,14 @@ Version 1.2.1 (2024-04-08)
                 if (num > UINT64_MAX / 2)
                     return 0;
 
-                size_t i  =  0;
+                size_t i = 0;
 
-                while (num > =  0x80) {
-                    buf[i++]  =  (uint8_t)(num) | 0x80;
-                    num >> =  7;
+                while (num >= 0x80) {
+                    buf[i++] = (uint8_t)(num) | 0x80;
+                    num >>= 7;
                 }
 
-                buf[i++]  =  (uint8_t)(num);
+                buf[i++] = (uint8_t)(num);
 
                 return i;
             }
@@ -229,20 +229,20 @@ Version 1.2.1 (2024-04-08)
             size_t
             decode(const uint8_t buf[], size_t size_max, uint64_t *num)
             {
-                if (size_max  =  =  0)
+                if (size_max == 0)
                     return 0;
 
                 if (size_max > 9)
-                    size_max  =  9;
+                    size_max = 9;
 
-                *num  =  buf[0] & 0x7F;
-                size_t i  =  0;
+                *num = buf[0] & 0x7F;
+                size_t i = 0;
 
                 while (buf[i++] & 0x80) {
-                    if (i > =  size_max || buf[i]  =  =  0x00)
+                    if (i >= size_max || buf[i] == 0x00)
                         return 0;
 
-                    *num | =  (uint64_t)(buf[i] & 0x7F) << (i * 7);
+                    *num |= (uint64_t)(buf[i] & 0x7F) << (i * 7);
                 }
 
                 return i;
@@ -254,9 +254,9 @@ Version 1.2.1 (2024-04-08)
         A standalone .xz files consist of one or more Streams which may
         have Stream Padding between or after them:
 
-            + =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +
+            +========+================+========+================+
             | Stream | Stream Padding | Stream | Stream Padding | ...
-            + =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +
+            +========+================+========+================+
 
         The sizes of Stream and Stream Padding are always multiples
         of four bytes, thus the size of every valid .xz file MUST be
@@ -275,13 +275,13 @@ Version 1.2.1 (2024-04-08)
 
 2.1. Stream
 
-        +-+-+-+-+-+-+-+-+-+-+-+-+ =  =  =  =  =  =  = + =  =  =  =  =  =  = +     + =  =  =  =  =  =  = +
+        +-+-+-+-+-+-+-+-+-+-+-+-+=======+=======+     +=======+
         |     Stream Header     | Block | Block | ... | Block |
-        +-+-+-+-+-+-+-+-+-+-+-+-+ =  =  =  =  =  =  = + =  =  =  =  =  =  = +     + =  =  =  =  =  =  = +
+        +-+-+-+-+-+-+-+-+-+-+-+-+=======+=======+     +=======+
 
-             + =  =  =  =  =  =  = +-+-+-+-+-+-+-+-+-+-+-+-+
+             +=======+-+-+-+-+-+-+-+-+-+-+-+-+
         ---> | Index |     Stream Footer     |
-             + =  =  =  =  =  =  = +-+-+-+-+-+-+-+-+-+-+-+-+
+             +=======+-+-+-+-+-+-+-+-+-+-+-+-+
 
         All the above fields have a size that is a multiple of four. If
         Stream is used as an internal part of another file format, it
@@ -317,7 +317,7 @@ Version 1.2.1 (2024-04-08)
 
             Using a C array and ASCII:
             const uint8_t HEADER_MAGIC[6]
-                     =  { 0xFD, '7', 'z', 'X', 'Z', 0x00 };
+                    = { 0xFD, '7', 'z', 'X', 'Z', 0x00 };
 
             In plain hexadecimal:
             FD 37 7A 58 5A 00
@@ -413,7 +413,7 @@ Version 1.2.1 (2024-04-08)
         which indicates the size of the Index field as multiple of
         four bytes, minimum value being four bytes:
 
-            real_backward_size  =  (stored_backward_size + 1) * 4;
+            real_backward_size = (stored_backward_size + 1) * 4;
 
         If the stored value does not match the real size of the Index
         field, the decoder MUST indicate an error.
@@ -439,7 +439,7 @@ Version 1.2.1 (2024-04-08)
         match, an error MUST be indicated.
 
             Using a C array and ASCII:
-            const uint8_t FOOTER_MAGIC[2]  =  { 'Y', 'Z' };
+            const uint8_t FOOTER_MAGIC[2] = { 'Y', 'Z' };
 
             In hexadecimal:
             59 5A
@@ -475,24 +475,24 @@ Version 1.2.1 (2024-04-08)
 
 3. Block
 
-        + =  =  =  =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  = +
+        +==============+=================+===============+=======+
         | Block Header | Compressed Data | Block Padding | Check |
-        + =  =  =  =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  = +
+        +==============+=================+===============+=======+
 
 
 3.1. Block Header
 
-        +-------------------+-------------+ =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +
+        +-------------------+-------------+=================+
         | Block Header Size | Block Flags | Compressed Size |
-        +-------------------+-------------+ =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +
+        +-------------------+-------------+=================+
 
-             + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +
+             +===================+======================+
         ---> | Uncompressed Size | List of Filter Flags |
-             + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +
+             +===================+======================+
 
-             + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +--+--+--+--+
+             +================+--+--+--+--+
         ---> | Header Padding |   CRC32   |
-             + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +--+--+--+--+
+             +================+--+--+--+--+
 
 
 3.1.1. Block Header Size
@@ -506,7 +506,7 @@ Version 1.2.1 (2024-04-08)
         Header as multiples of four bytes, minimum size being eight
         bytes:
 
-            real_header_size  =  (encoded_header_size + 1) * 4;
+            real_header_size = (encoded_header_size + 1) * 4;
 
         If a Block Header bigger than 1024 bytes is needed in the
         future, a new field can be added between the Block Header and
@@ -568,18 +568,18 @@ Version 1.2.1 (2024-04-08)
 
 3.1.5. List of Filter Flags
 
-        + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +     + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +
+        +================+================+     +================+
         | Filter 0 Flags | Filter 1 Flags | ... | Filter n Flags |
-        + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +     + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +
+        +================+================+     +================+
 
         The number of Filter Flags fields is stored in the Block Flags
         field (see Section 3.1.2).
 
         The format of each Filter Flags field is as follows:
 
-            + =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +
+            +===========+====================+===================+
             | Filter ID | Size of Properties | Filter Properties |
-            + =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +
+            +===========+====================+===================+
 
         Both Filter ID and Size of Properties are stored using the
         encoding described in Section 1.2. Size of Properties indicates
@@ -646,13 +646,13 @@ Version 1.2.1 (2024-04-08)
 
 4. Index
 
-        +-----------------+ =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +
+        +-----------------+===================+
         | Index Indicator | Number of Records |
-        +-----------------+ =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +
+        +-----------------+===================+
 
-             + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +-+-+-+-+
+             +=================+===============+-+-+-+-+
         ---> | List of Records | Index Padding | CRC32 |
-             + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +-+-+-+-+
+             +=================+===============+-+-+-+-+
 
         Index serves several purposes. Using it, one can
           - verify that all Blocks in a Stream have been processed;
@@ -682,15 +682,15 @@ Version 1.2.1 (2024-04-08)
         List of Records consists of as many Records as indicated by the
         Number of Records field:
 
-            + =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  = +
+            +========+========+
             | Record | Record | ...
-            + =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  = +
+            +========+========+
 
         Each Record contains information about one Block:
 
-            + =  =  =  =  =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +
+            +===============+===================+
             | Unpadded Size | Uncompressed Size |
-            + =  =  =  =  =  =  =  =  =  =  =  =  =  =  = + =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +
+            +===============+===================+
 
         If the decoder has decoded all the Blocks of the Stream, it
         MUST verify that the contents of the Records match the real
@@ -895,16 +895,16 @@ Version 1.2.1 (2024-04-08)
         Instead of having a table in the decoder, the dictionary size
         can be decoded using the following C code:
 
-            const uint8_t bits  =  get_dictionary_flags() & 0x3F;
+            const uint8_t bits = get_dictionary_flags() & 0x3F;
             if (bits > 40)
                 return DICTIONARY_TOO_BIG; // Bigger than 4 GiB
 
             uint32_t dictionary_size;
-            if (bits  =  =  40) {
-                dictionary_size  =  UINT32_MAX;
+            if (bits == 40) {
+                dictionary_size = UINT32_MAX;
             } else {
-                dictionary_size  =  2 | (bits & 1);
-                dictionary_size << =  bits / 2 + 11;
+                dictionary_size = 2 | (bits & 1);
+                dictionary_size <<= bits / 2 + 11;
             }
 
 
@@ -984,24 +984,24 @@ Version 1.2.1 (2024-04-08)
         the Delta filter.
 
             // Distance is in the range [1, 256].
-            const unsigned int distance  =  get_properties_byte() + 1;
-            uint8_t pos  =  0;
+            const unsigned int distance = get_properties_byte() + 1;
+            uint8_t pos = 0;
             uint8_t delta[256];
 
             memset(delta, 0, sizeof(delta));
 
             while (1) {
-                const int byte  =  read_byte();
-                if (byte  =  =  EOF)
+                const int byte = read_byte();
+                if (byte == EOF)
                     break;
 
-                uint8_t tmp  =  delta[(uint8_t)(distance + pos)];
+                uint8_t tmp = delta[(uint8_t)(distance + pos)];
                 if (is_encoder) {
-                    tmp  =  (uint8_t)(byte) - tmp;
-                    delta[pos]  =  (uint8_t)(byte);
+                    tmp = (uint8_t)(byte) - tmp;
+                    delta[pos] = (uint8_t)(byte);
                 } else {
-                    tmp  =  (uint8_t)(byte) + tmp;
-                    delta[pos]  =  tmp;
+                    tmp = (uint8_t)(byte) + tmp;
+                    delta[pos] = tmp;
                 }
 
                 write_byte(tmp);
@@ -1022,7 +1022,7 @@ Version 1.2.1 (2024-04-08)
         The following command, which works on many free operating
         systems, can be used to generate Developer ID:
 
-            dd if = /dev/urandom bs = 5 count = 1 | hexdump
+            dd if=/dev/urandom bs=5 count=1 | hexdump
 
         The developer can then use the Developer ID to create unique
         (well, hopefully unique) Filter IDs.
@@ -1068,37 +1068,37 @@ Version 1.2.1 (2024-04-08)
             void
             init(void)
             {
-                static const uint32_t poly32  =  UINT32_C(0xEDB88320);
+                static const uint32_t poly32 = UINT32_C(0xEDB88320);
                 static const uint64_t poly64
-                         =  UINT64_C(0xC96C5795D7870F42);
+                        = UINT64_C(0xC96C5795D7870F42);
 
-                for (size_t i  =  0; i < 256; ++i) {
-                    uint32_t crc32  =  i;
-                    uint64_t crc64  =  i;
+                for (size_t i = 0; i < 256; ++i) {
+                    uint32_t crc32 = i;
+                    uint64_t crc64 = i;
 
-                    for (size_t j  =  0; j < 8; ++j) {
+                    for (size_t j = 0; j < 8; ++j) {
                         if (crc32 & 1)
-                            crc32  =  (crc32 >> 1) ^ poly32;
+                            crc32 = (crc32 >> 1) ^ poly32;
                         else
-                            crc32 >> =  1;
+                            crc32 >>= 1;
 
                         if (crc64 & 1)
-                            crc64  =  (crc64 >> 1) ^ poly64;
+                            crc64 = (crc64 >> 1) ^ poly64;
                         else
-                            crc64 >> =  1;
+                            crc64 >>= 1;
                     }
 
-                    crc32_table[i]  =  crc32;
-                    crc64_table[i]  =  crc64;
+                    crc32_table[i] = crc32;
+                    crc64_table[i] = crc64;
                 }
             }
 
             uint32_t
             crc32(const uint8_t *buf, size_t size, uint32_t crc)
             {
-                crc  =  ~crc;
-                for (size_t i  =  0; i < size; ++i)
-                    crc  =  crc32_table[buf[i] ^ (crc & 0xFF)]
+                crc = ~crc;
+                for (size_t i = 0; i < size; ++i)
+                    crc = crc32_table[buf[i] ^ (crc & 0xFF)]
                             ^ (crc >> 8);
                 return ~crc;
             }
@@ -1106,9 +1106,9 @@ Version 1.2.1 (2024-04-08)
             uint64_t
             crc64(const uint8_t *buf, size_t size, uint64_t crc)
             {
-                crc  =  ~crc;
-                for (size_t i  =  0; i < size; ++i)
-                    crc  =  crc64_table[buf[i] ^ (crc & 0xFF)]
+                crc = ~crc;
+                for (size_t i = 0; i < size; ++i)
+                    crc = crc64_table[buf[i] ^ (crc & 0xFF)]
                             ^ (crc >> 8);
                 return ~crc;
             }
@@ -1118,20 +1118,20 @@ Version 1.2.1 (2024-04-08)
             {
                 init();
 
-                uint32_t value32  =  0;
-                uint64_t value64  =  0;
-                uint64_t total_size  =  0;
+                uint32_t value32 = 0;
+                uint64_t value64 = 0;
+                uint64_t total_size = 0;
                 uint8_t buf[8192];
 
                 while (1) {
                     const size_t buf_size
-                             =  fread(buf, 1, sizeof(buf), stdin);
-                    if (buf_size  =  =  0)
+                            = fread(buf, 1, sizeof(buf), stdin);
+                    if (buf_size == 0)
                         break;
 
-                    total_size + =  buf_size;
-                    value32  =  crc32(buf, buf_size, value32);
-                    value64  =  crc64(buf, buf_size, value64);
+                    total_size += buf_size;
+                    value32 = crc32(buf, buf_size, value32);
+                    value64 = crc64(buf, buf_size, value64);
                 }
 
                 printf("Bytes:  %" PRIu64 "\n", total_size);

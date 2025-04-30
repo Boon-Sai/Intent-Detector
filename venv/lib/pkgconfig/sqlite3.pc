@@ -1,13 +1,13 @@
 # Package Information for pkg-config
 
-prefix=/Users/naresh/Desktop/Projects/TekWorks-chatbot/Chat-bot/venv
+prefix=/Users/boonsai/Desktop/Projects/Phase-0/Intent-Detector/venv
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include
 
 Name: SQLite
 Description: SQL database engine
-Version: 3.49.1
+Version: 3.45.3
 Libs: -L${libdir} -lsqlite3
-Libs.private:  -lz 
+Libs.private: -lz 
 Cflags: -I${includedir}

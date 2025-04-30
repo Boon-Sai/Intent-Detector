@@ -1,6 +1,6 @@
 
 History of LZMA Utils and XZ Utils
- =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = 
+==================================
 
 Tukaani distribution
 

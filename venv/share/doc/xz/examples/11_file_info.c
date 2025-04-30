@@ -37,14 +37,14 @@ print_file_size(lzma_stream *strm, FILE *infile, const char *filename)
 		return false;
 	}
 
-	const long file_size  =  ftell(infile);
+	const long file_size = ftell(infile);
 
 	// The decoder wants to start from the beginning of the .xz file.
 	rewind(infile);
 
 	// Initialize the decoder.
 	lzma_index *i;
-	lzma_ret ret  =  lzma_file_info_decoder(strm, &i, UINT64_MAX,
+	lzma_ret ret = lzma_file_info_decoder(strm, &i, UINT64_MAX,
 			(uint64_t)file_size);
 	switch (ret) {
 	case LZMA_OK:
@@ -65,16 +65,16 @@ print_file_size(lzma_stream *strm, FILE *infile, const char *filename)
 	// This example program reuses the same lzma_stream structure
 	// for multiple files, so we need to reset this when starting
 	// a new file.
-	strm->avail_in  =  0;
+	strm->avail_in = 0;
 
 	// Buffer for input data.
 	uint8_t inbuf[BUFSIZ];
 
 	// Pass data to the decoder and seek when needed.
 	while (true) {
-		if (strm->avail_in  =  =  0) {
-			strm->next_in  =  inbuf;
-			strm->avail_in  =  fread(inbuf, 1, sizeof(inbuf),
+		if (strm->avail_in == 0) {
+			strm->next_in = inbuf;
+			strm->avail_in = fread(inbuf, 1, sizeof(inbuf),
 					infile);
 
 			if (ferror(infile)) {
@@ -88,7 +88,7 @@ print_file_size(lzma_stream *strm, FILE *infile, const char *filename)
 			// the file so no need to check for feof().
 		}
 
-		ret  =  lzma_code(strm, LZMA_RUN);
+		ret = lzma_code(strm, LZMA_RUN);
 
 		switch (ret) {
 		case LZMA_OK:
@@ -112,7 +112,7 @@ print_file_size(lzma_stream *strm, FILE *infile, const char *filename)
 			// avail_in to zero so that we will read new input
 			// from the new file position on the next iteration
 			// of this loop.
-			strm->avail_in  =  0;
+			strm->avail_in = 0;
 			break;
 
 		case LZMA_STREAM_END:
@@ -175,19 +175,19 @@ print_file_size(lzma_stream *strm, FILE *infile, const char *filename)
 extern int
 main(int argc, char **argv)
 {
-	bool success  =  true;
-	lzma_stream strm  =  LZMA_STREAM_INIT;
+	bool success = true;
+	lzma_stream strm = LZMA_STREAM_INIT;
 
-	for (int i  =  1; i < argc; ++i) {
-		FILE *infile  =  fopen(argv[i], "rb");
+	for (int i = 1; i < argc; ++i) {
+		FILE *infile = fopen(argv[i], "rb");
 
-		if (infile  =  =  NULL) {
+		if (infile == NULL) {
 			fprintf(stderr, "Cannot open the file '%s': %s\n",
 					argv[i], strerror(errno));
-			success  =  false;
+			success = false;
 		}
 
-		success & =  print_file_size(&strm, infile, argv[i]);
+		success &= print_file_size(&strm, infile, argv[i]);
 
 		(void)fclose(infile);
 	}
@@ -198,7 +198,7 @@ main(int argc, char **argv)
 	// when pending data is flushed from the stdio buffers.
 	if (fclose(stdout)) {
 		fprintf(stderr, "Write error: %s\n", strerror(errno));
-		success  =  false;
+		success = false;
 	}
 
 	return success ? EXIT_SUCCESS : EXIT_FAILURE;

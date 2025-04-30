@@ -1,6 +1,6 @@
 
 XZ Utils FAQ
- =  =  =  =  =  =  =  =  =  =  =  = 
+============
 
 Q:  What do the letters XZ mean?
 
@@ -124,7 +124,7 @@ Q:  I need to use a script that runs "xz -9". On a system with 256 MiB
 A:  Set a default memory usage limit for compression. You can do it e.g.
     in a shell initialization script such as ~/.bashrc or /etc/profile:
 
-        XZ_DEFAULTS = --memlimit-compress = 150MiB
+        XZ_DEFAULTS=--memlimit-compress=150MiB
         export XZ_DEFAULTS
 
     xz will then scale the compression settings down so that the given
@@ -140,12 +140,12 @@ Q:  How do I create files that can be decompressed with XZ Embedded?
 A:  See the documentation in XZ Embedded. In short, something like
     this is a good start:
 
-        xz --check = crc32 --lzma2 = preset = 6e,dict = 64KiB
+        xz --check=crc32 --lzma2=preset=6e,dict=64KiB
 
     Or if a BCJ filter is needed too, e.g. if compressing
     a kernel image for PowerPC:
 
-        xz --check = crc32 --powerpc --lzma2 = preset = 6e,dict = 64KiB
+        xz --check=crc32 --powerpc --lzma2=preset=6e,dict=64KiB
 
     Adjust the dictionary size to get a good compromise between
     compression ratio and decompressor memory usage. Note that
@@ -208,7 +208,7 @@ A:  Since multi-threaded compression is done by splitting the data into
     of which one will finish quickly as it has only 4 MiB to compress.
     However, for the same file, xz -9 can only use one thread.
 
-    One can adjust block size with --block-size = SIZE but making the
+    One can adjust block size with --block-size=SIZE but making the
     block size smaller than LZMA2 dictionary is waste of RAM: using
     xz -9 with 6 MiB blocks isn't any better than using xz -6 with
     6 MiB blocks. The default settings use a block size bigger than
@@ -234,7 +234,7 @@ Q:  The default build of liblzma is too big. How can I make it smaller?
 A:  Give --enable-small to the configure script. Use also appropriate
     --enable or --disable options to include only those filter encoders
     and decoders and integrity checks that you actually need. Use
-    CFLAGS = -Os (with GCC) or equivalent to tell your compiler to optimize
+    CFLAGS=-Os (with GCC) or equivalent to tell your compiler to optimize
     for size. See INSTALL for information about configure options.
 
     If the result is still too big, take a look at XZ Embedded. It is

@@ -1,6 +1,6 @@
 
 The .lzma File Format
- =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = 
+=====================
 
         0. Preface
            0.1. Notices and Acknowledgements
@@ -49,9 +49,9 @@ The .lzma File Format
 
 1. File Format
 
-        +-+-+-+-+-+-+-+-+-+-+-+-+-+ =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+==========================+
         |         Header          |   LZMA Compressed Data   |
-        +-+-+-+-+-+-+-+-+-+-+-+-+-+ =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = +
+        +-+-+-+-+-+-+-+-+-+-+-+-+-+==========================+
 
         The .lzma format file consist of 13-byte Header followed by
         the LZMA Compressed Data.
@@ -87,22 +87,22 @@ The .lzma File Format
 
         The properties are encoded using the following formula:
 
-            Properties  =  (pb * 5 + lp) * 9 + lc
+            Properties = (pb * 5 + lp) * 9 + lc
 
         The following C code illustrates a straightforward way to
         decode the Properties field:
 
             uint8_t lc, lp, pb;
-            uint8_t prop  =  get_lzma_properties();
+            uint8_t prop = get_lzma_properties();
             if (prop > (4 * 5 + 4) * 9 + 8)
                 return LZMA_PROPERTIES_ERROR;
 
-            pb  =  prop / (9 * 5);
-            prop - =  pb * 9 * 5;
-            lp  =  prop / 9;
-            lc  =  prop - lp * 9;
+            pb = prop / (9 * 5);
+            prop -= pb * 9 * 5;
+            lp = prop / 9;
+            lc = prop - lp * 9;
 
-        XZ Utils has an additional requirement: lc + lp < =  4. Files
+        XZ Utils has an additional requirement: lc + lp <= 4. Files
         which don't follow this requirement cannot be decompressed
         with XZ Utils. Usually this isn't a problem since the most
         common lc/lp/pb values are 3/0/2. It is the only lc/lp/pb
@@ -118,7 +118,7 @@ The .lzma File Format
         used.
 
         LZMA Utils creates only files with dictionary size 2^n,
-        16 < =  n < =  25. LZMA Utils can decompress files with any
+        16 <= n <= 25. LZMA Utils can decompress files with any
         dictionary size.
 
         XZ Utils creates and decompresses .lzma files only with

@@ -1,6 +1,6 @@
 
 XZ Utils
- =  =  =  =  =  =  =  = 
+========
 
     0. Overview
     1. Documentation
@@ -162,7 +162,7 @@ XZ Utils
 
       2. Compile XZ Utils with debugging code using configure switches
          --enable-debug and, if possible, --disable-shared. If you are
-         using GCC, use CFLAGS = '-O0 -ggdb3'. Don't strip the resulting
+         using GCC, use CFLAGS='-O0 -ggdb3'. Don't strip the resulting
          binaries.
 
       3. Turn on core dumps. The exact command depends on your shell;
@@ -208,7 +208,7 @@ XZ Utils
 
     Testing can be done by installing xz into a temporary directory:
 
-        ./configure --disable-shared --prefix = /tmp/xz-test
+        ./configure --disable-shared --prefix=/tmp/xz-test
         # <Edit the .po file in the po directory.>
         make -C po update-po
         make install

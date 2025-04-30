@@ -1,6 +1,6 @@
 
 XZ Utils Release Notes
- =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  =  = 
+======================
 
 5.6.4 (2025-01-23)
 
@@ -8,9 +8,9 @@ XZ Utils Release Notes
 
     * xz:
 
-        - Fix --filters =  and --filters1 =  ... --filters9 =  options
+        - Fix --filters= and --filters1= ... --filters9= options
           parsing. They require an argument, thus "xz --filters lzma2"
-          should work in addition to "xz --filters = lzma2".
+          should work in addition to "xz --filters=lzma2".
 
         - On the man page, note in the --compress and --decompress
           options that the default behavior is to delete the input
@@ -21,15 +21,15 @@ XZ Utils Release Notes
     * Windows (native builds, not Cygwin): Fix regressions introduced
       in XZ Utils 5.6.3 which caused non-ASCII characters to display
       incorrectly. Only builds with translation support were affected
-      (--enable-nls or ENABLE_NLS = ON). The following changes affect
+      (--enable-nls or ENABLE_NLS=ON). The following changes affect
       builds that have translations enabled:
 
         - Require UCRT because MSVCRT doesn't support UTF-8
           locales and thus translations won't be readable on
           Windows 10 version 1903 and later. (MSVCRT builds
-          are still possible with --disable-nls or ENABLE_NLS = OFF.)
+          are still possible with --disable-nls or ENABLE_NLS=OFF.)
 
-        - Require gettext-runtime > =  0.23.1 because older versions
+        - Require gettext-runtime >= 0.23.1 because older versions
           don't autodetect the use of the UTF-8 code page. This
           resulted in garbled non-ASCII characters even with UCRT.
 
@@ -140,7 +140,7 @@ XZ Utils Release Notes
     * CMake:
 
         - Use paths relative to ${prefix} in liblzma.pc when possible.
-          This is done only with CMake > =  3.20.
+          This is done only with CMake >= 3.20.
 
         - MSVC: Install liblzma.pc as it can be useful with MSVC too.
 
@@ -191,7 +191,7 @@ XZ Utils Release Notes
     * liblzma:
 
         - lzma_index_decoder() and lzma_index_buffer_decode(): Fix
-          a missing output pointer initialization (*i  =  NULL) if the
+          a missing output pointer initialization (*i = NULL) if the
           functions are called with invalid arguments. The API docs
           say that such an initialization is always done. In practice
           this matters very little because the problem can only occur
@@ -199,7 +199,7 @@ XZ Utils Release Notes
           return LZMA_PROG_ERROR.
 
         - lzma_str_to_filters(): Fix a missing output pointer
-          initialization (*error_pos  =  0). This is very similar
+          initialization (*error_pos = 0). This is very similar
           to the fix above.
 
         - Fix C standard conformance with function pointer types.
@@ -368,7 +368,7 @@ XZ Utils Release Notes
 
     * CMake:
 
-        - Default to -O2 instead of -O3 with CMAKE_BUILD_TYPE = Release.
+        - Default to -O2 instead of -O3 with CMAKE_BUILD_TYPE=Release.
           -O3 is not useful for speed and makes the code larger.
 
         - Now builds lzmainfo and lzmadec.
@@ -638,7 +638,7 @@ XZ Utils Release Notes
     * liblzma:
 
         - lzma_index_decoder() and lzma_index_buffer_decode(): Fix
-          a missing output pointer initialization (*i  =  NULL) if the
+          a missing output pointer initialization (*i = NULL) if the
           functions are called with invalid arguments. The API docs
           say that such an initialization is always done. In practice
           this matters very little because the problem can only occur
@@ -646,11 +646,11 @@ XZ Utils Release Notes
           return LZMA_PROG_ERROR.
 
         - lzma_str_to_filters(): Fix a missing output pointer
-          initialization (*error_pos  =  0). This is very similar
+          initialization (*error_pos = 0). This is very similar
           to the fix above.
 
         - Fix C standard conformance with function pointer types.
-          This newly showed up with Clang 17 with -fsanitize = undefined.
+          This newly showed up with Clang 17 with -fsanitize=undefined.
           There are no bug reports about this.
 
         - Fix building with NVIDIA HPC SDK.
@@ -726,7 +726,7 @@ XZ Utils Release Notes
           used. For instance, the following command no longer reports
           that --suffix must be used:
 
-              echo foo | xz --format = raw --lzma2 | wc -c
+              echo foo | xz --format=raw --lzma2 | wc -c
 
         - Fixed an issue on MinGW-w64 builds that prevented reading
           from or writing to non-terminal character devices like NUL.
@@ -757,7 +757,7 @@ XZ Utils Release Notes
       console and deleted the input file "con_xz":
 
           echo foo | xz > con_xz
-          xz --suffix = _xz --decompress con_xz
+          xz --suffix=_xz --decompress con_xz
 
     * Build systems:
 
@@ -1071,7 +1071,7 @@ XZ Utils Release Notes
           encoder (lzma_stream_encoder_mt()) to change the filter chain
           after LZMA_FULL_BARRIER or LZMA_FULL_FLUSH.
 
-        - In lzma_options_lzma, allow nice_len  =  2 and 3 with the match
+        - In lzma_options_lzma, allow nice_len = 2 and 3 with the match
           finders that require at least 3 or 4. Now it is internally
           rounded up if needed.
 
@@ -1086,12 +1086,12 @@ XZ Utils Release Notes
 
     * xz:
 
-        - Using -T0 (--threads = 0) will now use multi-threaded encoder
+        - Using -T0 (--threads=0) will now use multi-threaded encoder
           even on a single-core system. This is to ensure that output
           from the same xz binary is identical on both single-core and
           multi-core systems.
 
-        - --threads = +1 or -T+1 is now a way to put xz into
+        - --threads=+1 or -T+1 is now a way to put xz into
           multi-threaded mode while using only one worker thread.
           The + is ignored if the number is not 1.
 
@@ -1129,7 +1129,7 @@ XZ Utils Release Notes
           single-threaded mode and won't scale down the LZMA2
           dictionary size.
 
-        - Added a new option --memlimit-mt-decompress = LIMIT. This is
+        - Added a new option --memlimit-mt-decompress=LIMIT. This is
           used to limit the number of decompressor threads (possibly
           falling back to single-threaded mode) but it will never make
           xz refuse to decompress a file. This has a system-specific
@@ -1142,7 +1142,7 @@ XZ Utils Release Notes
           the same as the one used for compression with -T0.
 
           The new option works together with the existing option
-          --memlimit-decompress = LIMIT. The old option sets a hard limit
+          --memlimit-decompress=LIMIT. The old option sets a hard limit
           that must not be exceeded (xz will refuse to decompress)
           while the new option only restricts the number of threads.
           If the limit set with --memlimit-mt-decompress is greater
@@ -1152,7 +1152,7 @@ XZ Utils Release Notes
         - Added new information to the output of xz --info-memory and
           new fields to the output of xz --robot --info-memory.
 
-        - In --lzma2 = nice = NUMBER allow 2 and 3 with all match finders
+        - In --lzma2=nice=NUMBER allow 2 and 3 with all match finders
           now that liblzma handles it.
 
         - Don't mention endianness for ARM and ARM-Thumb filters in
@@ -1203,22 +1203,22 @@ XZ Utils Release Notes
           encoder (lzma_stream_encoder_mt()) to change the filter chain
           after LZMA_FULL_BARRIER or LZMA_FULL_FLUSH.
 
-        - In lzma_options_lzma, allow nice_len  =  2 and 3 with the match
+        - In lzma_options_lzma, allow nice_len = 2 and 3 with the match
           finders that require at least 3 or 4. Now it is internally
           rounded up if needed.
 
         - ARM64 filter was modified. It is still experimental.
 
-        - Fixed LTO build with Clang if -fgnuc-version = 10 or similar
-          was used to make Clang look like GCC > =  10. Now it uses
+        - Fixed LTO build with Clang if -fgnuc-version=10 or similar
+          was used to make Clang look like GCC >= 10. Now it uses
           __has_attribute(__symver__) which should be reliable.
 
     * xz:
 
-        - --threads = +1 or -T+1 is now a way to put xz into multi-threaded
+        - --threads=+1 or -T+1 is now a way to put xz into multi-threaded
           mode while using only one worker thread.
 
-        - In --lzma2 = nice = NUMBER allow 2 and 3 with all match finders
+        - In --lzma2=nice=NUMBER allow 2 and 3 with all match finders
           now that liblzma handles it.
 
     * Updated translations: Chinese (simplified), Korean, and Turkish.
@@ -1348,7 +1348,7 @@ XZ Utils Release Notes
 
     * xz:
 
-        - Using -T0 (--threads = 0) will now use multi-threaded encoder
+        - Using -T0 (--threads=0) will now use multi-threaded encoder
           even on a single-core system. This is to ensure that output
           from the same xz binary is identical on both single-core and
           multi-core systems.
@@ -1399,7 +1399,7 @@ XZ Utils Release Notes
           from multithreaded mode to single-threaded mode and won't
           scale down the LZMA2 dictionary size.
 
-        - Added a new option --memlimit-mt-decompress = LIMIT. This is
+        - Added a new option --memlimit-mt-decompress=LIMIT. This is
           used to limit the number of decompressor threads (possibly
           falling back to single-threaded mode) but it will never make
           xz refuse to decompress a file. This has a system-specific
@@ -1411,7 +1411,7 @@ XZ Utils Release Notes
           common files.
 
           The new option works together with the existing option
-          --memlimit-decompress = LIMIT. The old option sets a hard limit
+          --memlimit-decompress=LIMIT. The old option sets a hard limit
           that must not be exceeded (xz will refuse to decompress)
           while the new option only restricts the number of threads.
           If the limit set with --memlimit-mt-decompress is greater
@@ -1533,7 +1533,7 @@ XZ Utils Release Notes
       implement the --list feature.
 
     * Capsicum sandbox support is enabled by default where available
-      (FreeBSD > =  10).
+      (FreeBSD >= 10).
 
 
 5.2.13 (2024-05-29)
@@ -1545,7 +1545,7 @@ XZ Utils Release Notes
           that there was no other bug than the assertion failure.
 
         - lzma_index_decoder() and lzma_index_buffer_decode(): Fix
-          a missing output pointer initialization (*i  =  NULL) if the
+          a missing output pointer initialization (*i = NULL) if the
           functions are called with invalid arguments. The API docs
           say that such an initialization is always done. In practice
           this matters very little because the problem can only occur
@@ -1553,7 +1553,7 @@ XZ Utils Release Notes
           return LZMA_PROG_ERROR.
 
         - Fix C standard conformance with function pointer types.
-          This newly showed up with Clang 17 with -fsanitize = undefined.
+          This newly showed up with Clang 17 with -fsanitize=undefined.
           There are no bug reports about this.
 
         - Fix building with NVIDIA HPC SDK.
@@ -1574,7 +1574,7 @@ XZ Utils Release Notes
           file "con_xz":
 
               echo foo | xz > con_xz
-              xz --suffix = _xz --decompress con_xz
+              xz --suffix=_xz --decompress con_xz
 
         - Windows: Fix an issue that prevented reading from or writing
           to non-terminal character devices like NUL.
@@ -1709,7 +1709,7 @@ XZ Utils Release Notes
     * liblzma:
 
         - Fixed an infinite loop in LZMA encoder initialization
-          if dict_size > =  2 GiB. (The encoder only supports up
+          if dict_size >= 2 GiB. (The encoder only supports up
           to 1536 MiB.)
 
         - Fixed two cases of invalid free() that can happen if
@@ -1787,7 +1787,7 @@ XZ Utils Release Notes
           one is __SSE2__. The first one means that SSE2 is used
           for floating point math which is irrelevant here.
           The affected SSE2 code isn't used on x86-64 so this affects
-          only 32-bit x86 builds that use -msse2 without -mfpmath = sse
+          only 32-bit x86 builds that use -msse2 without -mfpmath=sse
           (there is no runtime detection for SSE2). It improves LZMA
           compression speed (not decompression).
 
@@ -1859,12 +1859,12 @@ XZ Utils Release Notes
           (xz-5.2.2-compat-libs.patch). For the details, see the
           comment at the top of src/liblzma/validate_map.sh.
 
-          WARNING: This uses __symver__ attribute with GCC > =  10.
+          WARNING: This uses __symver__ attribute with GCC >= 10.
           In other cases the traditional __asm__(".symver ...")
           is used. Using link-time optimization (LTO, -flto) with
           GCC versions older than 10 can silently result in
           broken liblzma.so.5 (incorrect symbol versions)! If you
-          want to use -flto with GCC, you must use GCC > =  10.
+          want to use -flto with GCC, you must use GCC >= 10.
           LTO with Clang seems to work even with the traditional
           __asm__(".symver ...") method.
 
@@ -1943,7 +1943,7 @@ XZ Utils Release Notes
           robustness improvement has been made since then and, if
           using GNU or *BSD grep, a new faster method is now used
           that doesn't use the old sed-based construct at all. This
-          also fixes bad output with GNU grep > =  3.5 (2020-09-27)
+          also fixes bad output with GNU grep >= 3.5 (2020-09-27)
           when xzgrepping binary files.
 
           This vulnerability was discovered by:
@@ -2017,7 +2017,7 @@ XZ Utils Release Notes
     * liblzma:
 
         - Fixed several C99/C11 conformance bugs. Now the code is clean
-          under gcc/clang -fsanitize = undefined. Some of these changes
+          under gcc/clang -fsanitize=undefined. Some of these changes
           might have a negative effect on performance with old GCC
           versions or compilers other than GCC and Clang. The configure
           option --enable-unsafe-type-punning can be used to (mostly)
@@ -2054,7 +2054,7 @@ XZ Utils Release Notes
           e.g. with some scripts.
 
         - Capsicum sandbox is now enabled by default where available
-          (FreeBSD > =  10). The sandbox debug messages (xz -vv) were
+          (FreeBSD >= 10). The sandbox debug messages (xz -vv) were
           removed since they seemed to be more annoying than useful.
 
         - DOS build now requires DJGPP 2.05 instead of 2.04beta.
@@ -2062,7 +2062,7 @@ XZ Utils Release Notes
 
     * xzgrep and other scripts:
 
-        - Added a configure option --enable-path-for-scripts = PREFIX.
+        - Added a configure option --enable-path-for-scripts=PREFIX.
           It is disabled by default except on Solaris where the default
           is /usr/xpg4/bin. See INSTALL for details.
 
@@ -2154,7 +2154,7 @@ XZ Utils Release Notes
         - Fixed copying of file timestamps on Windows.
 
         - Added experimental (disabled by default) sandbox support using
-          Capsicum (FreeBSD > =  10). See --enable-sandbox in INSTALL.
+          Capsicum (FreeBSD >= 10). See --enable-sandbox in INSTALL.
 
     * C99/C11 conformance fixes to liblzma. The issues affected at least
       some builds using link-time optimizations.
@@ -2270,8 +2270,8 @@ XZ Utils Release Notes
           [Fixed: This originally said "decompression".]
 
         - New command line options in xz: --single-stream,
-          --block-size = SIZE, --block-list = SIZES,
-          --flush-timeout = TIMEOUT, and --ignore-check.
+          --block-size=SIZE, --block-list=SIZES,
+          --flush-timeout=TIMEOUT, and --ignore-check.
 
         - xz -lvv now shows the minimum xz version that is required to
           decompress the file. Currently it is 5.0.0 for all supported
@@ -2350,9 +2350,9 @@ XZ Utils Release Notes
 
         - Made the progress indicator work correctly in threaded mode.
 
-        - Threaded encoder now works together with --block-list = SIZES.
+        - Threaded encoder now works together with --block-list=SIZES.
 
-        - Added preliminary support for --flush-timeout = TIMEOUT.
+        - Added preliminary support for --flush-timeout=TIMEOUT.
           It can be useful for (somewhat) real-time streaming. For
           now the decompression side has to be done with something
           else than the xz tool due to how xz does buffering, but this
@@ -2393,7 +2393,7 @@ XZ Utils Release Notes
       decompress the file. Currently it is 5.0.0 for all supported .xz
       files except files with empty LZMA2 streams require 5.0.2.
 
-    * Added an *incomplete* implementation of --block-list = SIZES to xz.
+    * Added an *incomplete* implementation of --block-list=SIZES to xz.
       It only works correctly in single-threaded mode and when
       --block-size isn't used at the same time. --block-list allows
       specifying the sizes of Blocks which can be useful e.g. when
@@ -2434,7 +2434,7 @@ XZ Utils Release Notes
       The current method has room for improvement, e.g. it is possible
       to reduce the memory usage.
 
-    * Added the options --single-stream and --block-size = SIZE to xz.
+    * Added the options --single-stream and --block-size=SIZE to xz.
 
     * xzdiff and xzgrep now support .lzo files if lzop is installed.
       The .tzo suffix is also recognized as a shorthand for .tar.lzo.
@@ -2479,7 +2479,7 @@ XZ Utils Release Notes
       .lzma files that have less common settings in the headers
       (dictionary size other than 2^n or 2^n + 2^(n-1), or uncompressed
       size greater than 256 GiB). The limitations existed to avoid false
-      positives when detecting .lzma files. The lc + lp < =  4 limitation
+      positives when detecting .lzma files. The lc + lp <= 4 limitation
       still remains since liblzma's LZMA decoder has that limitation.
 
       NOTE: xz's .lzma support or liblzma's lzma_auto_decoder() are NOT
@@ -2499,12 +2499,12 @@ XZ Utils Release Notes
           a preset option is specified, all custom filter chain options
           earlier on the command line are completely forgotten.
 
-          Example 1: "xz -9 --lzma2 = preset = 5 -e" is equivalent to "xz -e"
+          Example 1: "xz -9 --lzma2=preset=5 -e" is equivalent to "xz -e"
           which is equivalent to "xz -6e". Earlier -e didn't put xz back
           into preset mode and thus the example command was equivalent
-          to "xz --lzma2 = preset = 5".
+          to "xz --lzma2=preset=5".
 
-          Example 2: "xz -9e --lzma2 = preset = 5 -7" is equivalent to
+          Example 2: "xz -9e --lzma2=preset=5 -7" is equivalent to
           "xz -7". Earlier a custom filter chain option didn't make
           xz forget the -e option so the example was equivalent to
           "xz -7e".
@@ -2603,7 +2603,7 @@ XZ Utils Release Notes
       .xz files with empty LZMA2 streams. (Empty .xz files are a
       different thing than empty LZMA2 streams.)
 
-    * "xz --suffix = .foo filename.foo" now refuses to compress the
+    * "xz --suffix=.foo filename.foo" now refuses to compress the
       file due to it already having the suffix .foo. It was already
       documented on the man page, but the code lacked the test.
 
@@ -2632,8 +2632,8 @@ XZ Utils Release Notes
     here. One change is especially important:
 
       * The memory usage limit is now disabled by default. Some scripts
-        written before this change may have used --memory = max on xz command
-        line or in XZ_OPT. THESE USES OF --memory = max SHOULD BE REMOVED
+        written before this change may have used --memory=max on xz command
+        line or in XZ_OPT. THESE USES OF --memory=max SHOULD BE REMOVED
         NOW, because they interfere with user's ability to set the memory
         usage limit himself. If user-specified limit causes problems to
         your script, blame the user.

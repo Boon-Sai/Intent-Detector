@@ -92,8 +92,6 @@ TOKEN_ENDS = TSPECIALS | WSP
 ASPECIALS = TSPECIALS | set("*'%")
 ATTRIBUTE_ENDS = ASPECIALS | WSP
 EXTENDED_ATTRIBUTE_ENDS = ATTRIBUTE_ENDS - set('%')
-NLSET = {'\n', '\r'}
-SPECIALSNL = SPECIALS | NLSET
 
 def quote_string(value):
     return '"'+str(value).replace('\\', '\\\\').replace('"', r'\"')+'"'
@@ -783,7 +781,7 @@ class MimeParameters(TokenList):
                     else:
                         try:
                             value = value.decode(charset, 'surrogateescape')
-                        except (LookupError, UnicodeEncodeError):
+                        except LookupError:
                             # XXX: there should really be a custom defect for
                             # unknown character set to make it easy to find,
                             # because otherwise unknown charset is a silent
@@ -2381,7 +2379,7 @@ def get_section(value):
         digits += value[0]
         value = value[1:]
     if digits[0] == '0' and digits != '0':
-        section.defects.append(errors.InvalidHeaderDefect(
+        section.defects.append(errors.InvalidHeaderError(
                 "section number has an invalid leading 0"))
     section.number = int(digits)
     section.append(ValueTerminal(digits, 'digits'))
@@ -2780,13 +2778,9 @@ def _refold_parse_tree(parse_tree, *, policy):
             wrap_as_ew_blocked -= 1
             continue
         tstr = str(part)
-        if not want_encoding:
-            if part.token_type == 'ptext':
-                # Encode if tstr contains special characters.
-                want_encoding = not SPECIALSNL.isdisjoint(tstr)
-            else:
-                # Encode if tstr contains newlines.
-                want_encoding = not NLSET.isdisjoint(tstr)
+        if part.token_type == 'ptext' and set(tstr) & SPECIALS:
+            # Encode if tstr contains special characters.
+            want_encoding = True
         try:
             tstr.encode(encoding)
             charset = encoding
